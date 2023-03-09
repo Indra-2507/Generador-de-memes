@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/a7b05e6997.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+            <h1 class="header__h1">generador de memes</h1>
+            <div class="header__div">
+                <button class="header__button"><i class="fa-solid fa-image"></i>imagen</button>
+                <button class="header__button"><i class="fa-solid fa-font"></i>texto</button>
+                <button class="header__button"><i class="fa-solid fa-lightbulb"></i>modo oscuro</button>
+            </div>
+    </header>
+    <main>
+        <div class="main__div--black" >
+            <h2 class="main__h2">top text</h2>
+        </div>
+        <div class="main__div--center">
+                <img src="" alt="">
+        </div>
+        <div class="main__div--black">
+                <h2 class="main__h2">bottom text</h2>
+        </div>
+        <button class="main__button"><i class="fa-solid fa-download"></i>descargar meme</button>
+    </main>  
+    <aside>
+       <section class="aside__section">
+            <button class="aside__button--x"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="aside__h3">imagen</h3>
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="aside__div">
+            <label for="url">url
+                <input class="aside__box" type="url" name="sitiodelaimagen"></label>
+            </div>  
+            <div class="aside__div">
+                <label for="fondo">fondo</label>
+                <button class="aside__fieldset--back--button">color</button>
+                <select class="aside__box" name="fondo" id="">
+                    <option value="ninguno">ninguno</option>
+                    <option value="aclarar">aclarar</option>
+                    <option value="oscurecer">oscurecer</option>
+                    <option value="diferencia">diferencia</option>
+                    <option value="luminosidad">luminosidad</option>
+                    <option value="multiplicar">multiplicar</option>
+                </select>
+            </div>  
+            <div class="aside__div">
+                <label class="aside__filtros" for="filtros">filtros</label>
+                <label for="brillo">brillo
+                <input class="aside__box" type="range"></label>
+                <label for="opacidad">opacidad
+                <input class="aside__box" type="range"></label>
+                <label for="contraste">contraste
+                <input class="aside__box" type="range"></label>
+                <label for="desenfoque">desenfoque
+                <input class="aside__box" type="range"></label>
+                <label for="escala">escala de grises
+                <input class="aside__box" type="range"></label>
+                <label for="sepia">sepia
+                <input class="aside__box" type="range"></label>
+                <label for="hue">hue
+                <input class="aside__box" type="range"></label>
+                <label for="saturado">saturado
+                <input class="aside__box" type="range"></label>
+                <label for="negativo">negativo
+                <input class="aside__box" type="range"></label>
+                <button class="aside__fieldset--filtro--button">reestablecer filtros</button>
+            </div>  
+            </form>
+        </section>
+      <!-- <section class="aside__div">
+            <button class="aside__button--x"><i class="fa-solid fa-xmark"></i></button>
+            <h3 class="aside__h3">texto</h3>
+        <form action=""method="post" enctype= "multipart/form-data">
+              <div class="aside__div">
+                <label for="">superior</label>
+                <textarea class="aside__box" name="toptext" id="" cols="25" rows="2">top text</textarea>
+                <label for="">
+                <input class="aside__box" type="radio" name="sintexto" value="1">Sin texto superior</label>
+                
+                </div class="aside__div">  
+                <div>
+                    <label for="">inferior</label>
+                <textarea class="aside__box" name="bottomtext" id="" cols="25" rows="2">bottom text</textarea>
+                <label for=""><input type="radio" name="sintexto" value="1">Sin texto inferior</label>
+                </div>  
+                <div class="aside__div">
+                <label for="fuente">fuente</label>
+                <select class="aside__box" name="fuentes" id="">
+                    <option value="arial">arial</option>
+                    <option value="arialblack">arial black</option>
+                    <option value="americantypewriter">american typewriter</option>
+                    <option value="andalemono">andale mono</option>
+                    <option value="comicsanzms">comic sanz ms</option>
+                    <option value="helvetica">helvética</option>
+                    <option value="impact">impact</option>
+                    <option value="verdana">verdana</option>
+                    <option value="timesnewroman">times new roman</option>
+                </select>
+                <textarea class="aside__box" name="tamaño" id="" cols="5" rows="2">40</textarea>
+                <button><i class="fa-solid fa-align-left"></i></button>
+                <button><i class="fa-solid fa-align-center"></i></button>
+                <button><i class="fa-sharp fa-solid fa-align-right"></i></button>
+                </div>  
+                <div class="aside__div">
+                <label for="color">color</label>
+                <input class="aside__box" type="color" value="">
+                <label for="fondo">fondo</label>
+                <input class="aside__box" type="text">
+                <label for=""><input type="radio" name="transparente" value="1">fondo transparente</label>
+                </div>  
+                <div class="aside__div">
+                <label for="contorno">contorno</label>
+                <button class="aside__fieldset--contorno--button" >ninguno</button>
+                <button class="aside__fieldset--contorno--button">claro</button>
+                <button class="aside__fieldset--contorno--button">oscuro</button>
+                </div>  
+                <div class="aside__div">
+                <label for="espaciado">espaciado</label>
+                <textarea class="aside__box" name="numero" id="" cols="25" rows="2">12</textarea>
+                
+                </div>  
+                <div class="aside__div">
+                <label for="interlineado">interlineado</label>
+                <select class="aside__box" name="interlineado" id="">
+                    <option value="0.8">0.8</option>
+                    <option value="1">1</option>
+                    <option value="1.2">1.2</option>
+                    <option value="1.5">1.5</option>
+                    <option value="2">2</option>
+                    <option value="2.5">2.5</option>
+                </select>
+                </div>  
+        </form>
+        </section> 
+    </aside>-->
+</body>
+</html>
