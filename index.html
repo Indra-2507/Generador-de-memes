@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://kit.fontawesome.com/a7b05e6997.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -12,36 +12,38 @@
     <header>
             <h1 class="header__h1">generador de memes</h1>
             <div class="header__div">
-                <button class="header__button"><i class="fa-solid fa-image"></i>imagen</button>
-                <button class="header__button"><i class="fa-solid fa-font"></i>texto</button>
-                <button class="header__button"><i class="fa-solid fa-lightbulb"></i>modo oscuro</button>
+                <button class="header__button"><i class="fa-solid fa-image"></i>&nbsp; imagen</button>
+                <button class="header__button"><i class="fa-solid fa-font"></i>&nbsp;texto</button>
+                <button class="header__button"><i class="fa-solid fa-lightbulb"></i>&nbsp;modo oscuro</button>
             </div>
     </header>
     <main>
-        <div class="main__div--black" >
-            <h2 class="main__h2">top text</h2>
-        </div>
-        <div class="main__div--center">
+        <section class="main__section">
+            <div class="main__div--black" >
+                <h2 class="main__h2">top text</h2>
+            </div>
+            <div class="main__div--center">
                 <img src="" alt="">
-        </div>
-        <div class="main__div--black">
+            </div>
+            <div class="main__div--black">
                 <h2 class="main__h2">bottom text</h2>
-        </div>
-        <button class="main__button"><i class="fa-solid fa-download"></i>descargar meme</button>
+            </div>
+            <button class="main__button"><i class="fa-solid fa-download"></i>descargar meme</button>
+        </section>
     </main>  
     <aside>
        <section class="aside__section">
             <button class="aside__button--x"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="aside__h3">imagen</h3>
-        <form action="" method="post" enctype="multipart/form-data">
             <div class="aside__div">
-            <label for="url">url
-                <input class="aside__box" type="url" name="sitiodelaimagen"></label>
+            <h4 class="aside__h4">url</h4>
+                <input class="aside__box" type="url" name="imagePlace">
             </div>  
-            <div class="aside__div">
-                <label for="fondo">fondo</label>
-                <button class="aside__fieldset--back--button">color</button>
-                <select class="aside__box" name="fondo" id="">
+            <div class="aside__div ">
+                <h4 class="aside__h4">fondo</h4>
+                <article class="aside__div--article">
+                <input class="aside__color" type="color">
+                <select class="aside__box aside__select" name="fondo" id="">
                     <option value="ninguno">ninguno</option>
                     <option value="aclarar">aclarar</option>
                     <option value="oscurecer">oscurecer</option>
@@ -49,10 +51,11 @@
                     <option value="luminosidad">luminosidad</option>
                     <option value="multiplicar">multiplicar</option>
                 </select>
+            </article>
             </div>  
             <div class="aside__div">
-                <label class="aside__filtros" for="filtros">filtros</label>
-                <label for="brillo">brillo
+                <h4 >filtros</h4>
+                <label for="brillo"> brillo</label>
                 <input class="aside__box" type="range"></label>
                 <label for="opacidad">opacidad
                 <input class="aside__box" type="range"></label>
@@ -70,28 +73,23 @@
                 <input class="aside__box" type="range"></label>
                 <label for="negativo">negativo
                 <input class="aside__box" type="range"></label>
-                <button class="aside__fieldset--filtro--button">reestablecer filtros</button>
+                <button class="aside__button aside__filtro">reestablecer filtros</button>
             </div>  
-            </form>
         </section>
-      <!-- <section class="aside__div">
+    
+    <!--   <section class="aside__section">
             <button class="aside__button--x"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="aside__h3">texto</h3>
-        <form action=""method="post" enctype= "multipart/form-data">
               <div class="aside__div">
-                <label for="">superior</label>
-                <textarea class="aside__box" name="toptext" id="" cols="25" rows="2">top text</textarea>
-                <label for="">
-                <input class="aside__box" type="radio" name="sintexto" value="1">Sin texto superior</label>
-                
-                </div class="aside__div">  
-                <div>
-                    <label for="">inferior</label>
-                <textarea class="aside__box" name="bottomtext" id="" cols="25" rows="2">bottom text</textarea>
-                <label for=""><input type="radio" name="sintexto" value="1">Sin texto inferior</label>
+                <h4 class="aside__h4">superior</h4>
+                    <textarea class="aside__box" name="" id="" cols="30" rows="2">top text</textarea>
+                    <input type="radio" name="outText" value="1"> <span class= "out__text"> &nbsp;sin texto superior</span> 
+                <h4 class="aside__h4">inferior</h4>
+                    <textarea class="aside__box" name="" id="" cols="30" rows="2">&nbsp; bottom text</textarea>
+                    <input type="radio"name="outText" value="1"> <span class= "out__text">sin texto inferior</span> 
                 </div>  
                 <div class="aside__div">
-                <label for="fuente">fuente</label>
+                <h4 class="aside__h4">fuente</h4>
                 <select class="aside__box" name="fuentes" id="">
                     <option value="arial">arial</option>
                     <option value="arialblack">arial black</option>
@@ -103,31 +101,37 @@
                     <option value="verdana">verdana</option>
                     <option value="timesnewroman">times new roman</option>
                 </select>
-                <textarea class="aside__box" name="tamaño" id="" cols="5" rows="2">40</textarea>
-                <button><i class="fa-solid fa-align-left"></i></button>
-                <button><i class="fa-solid fa-align-center"></i></button>
-                <button><i class="fa-sharp fa-solid fa-align-right"></i></button>
+                    <div class="aside__div--style">
+                        <input class="aside__box aside__select" type="number" value="40">
+                        <button class="aside__button"><i class="fa-solid fa-align-left"></i></button>
+                        <button class="aside__button"><i class="fa-solid fa-align-center"></i></button>
+                        <button class="aside__button"><i class="fa-sharp fa-solid fa-align-right"></i></button>
+                    </div>
+                </div>  
+                <div class="aside__div--article">
+                <article>
+                    <h4 class="aside__h4">color</h4>
+                    <input class="aside__box" type="color" value="">
+                </article>
+                <article>
+                    <h4 class="aside__h4">fondo</h4>
+                    <input class="aside__box" type="text">
+                </article>
+                </div>
+                <label  class="out__text"><input type="radio" name="transparent" value="2"> &nbsp; fondo transparente</label>
                 </div>  
                 <div class="aside__div">
-                <label for="color">color</label>
-                <input class="aside__box" type="color" value="">
-                <label for="fondo">fondo</label>
-                <input class="aside__box" type="text">
-                <label for=""><input type="radio" name="transparente" value="1">fondo transparente</label>
+                <h4 class="aside__h4">contorno</h4>
+                <button class="aside__button" >ninguno</button>
+                <button class="aside__button">claro</button>
+                <button class="aside__button">oscuro</button>
                 </div>  
                 <div class="aside__div">
-                <label for="contorno">contorno</label>
-                <button class="aside__fieldset--contorno--button" >ninguno</button>
-                <button class="aside__fieldset--contorno--button">claro</button>
-                <button class="aside__fieldset--contorno--button">oscuro</button>
+                <h4 class="aside__h4">espaciado</h4>
+                <input class="aside__box aside__select" type="number" value="35">
                 </div>  
                 <div class="aside__div">
-                <label for="espaciado">espaciado</label>
-                <textarea class="aside__box" name="numero" id="" cols="25" rows="2">12</textarea>
-                
-                </div>  
-                <div class="aside__div">
-                <label for="interlineado">interlineado</label>
+                <h4 class="aside__h4">interlineado</h4>
                 <select class="aside__box" name="interlineado" id="">
                     <option value="0.8">0.8</option>
                     <option value="1">1</option>
@@ -137,8 +141,8 @@
                     <option value="2.5">2.5</option>
                 </select>
                 </div>  
-        </form>
-        </section> 
-    </aside>-->
+
+        </section> -->
+    </aside>
 </body>
 </html>

@@ -1,5 +1,10 @@
 :root{--white-color: #ffffff;
---button-aside-color:#393e49}
+--button-aside-color:#393e49;
+--grey-color:#30343f;
+--blue-color: #191e2b;
+--black-color:   #141313;
+--aside-color: #252935;
+--font-family-type:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif }
 
 *{margin: 0%;
 padding: 0%;
@@ -7,32 +12,36 @@ box-sizing: border-box;
 text-decoration: none;
 list-style: none;
 border: none;
-font-family: 'Courier New', Courier, monospace;
-color: white;}
+font-family: var(--font-family-type);
+color:var(--white-color);}
 
  /*header*/
-header{background-color: #191e2b;
-    width: 100vw;
+header{background-color: var(--blue-color);
+    width: 100%;
 height: 120px;
 text-align: center;
 position: relative;}
 
 .header__h1{text-transform: capitalize;
-    padding: 2%
+    padding: 1%;
+    font-size: 2rem;
 }
 .header__button{
-    padding: 1%;
+    padding: 2%;
+    font-size: 1rem;
     background-color: transparent;
     text-transform: capitalize;
-    margin-bottom: 2%;
 }
 
 
 /*main*/
-main{background-color: #30343f;
+.main__section{
+    background-color:var(--grey-color);
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-align-items: center;
+    align-items: center;
 }
 
 .main__div--black{
@@ -41,27 +50,27 @@ align-items: center;
     width: 610px;
 }
 .main__h2{
-    color: #191e2b;
+    color: var(--blue-color);
     text-align: center;
+    font-size: 2rem;
     margin:5%;
     text-transform: uppercase;
 }
 
 .main__div--center{
-    background-color: black;
+    background-color: var(--black-color);
     height: 350px;
     width: 610px;
 }
 .main__button{
-    background-color: green;
+    background-color: #008000;
     padding: 1%;
     margin-top: 20px;
 }
 /*aside*/
-aside{background-color: #252935;
+aside{background-color:var(--aside-color); 
     width: 260px;
     height: 100%;
-    padding: 30px 15px;
     overflow: auto;
     position: fixed;
     top: 0;
@@ -70,8 +79,8 @@ aside{background-color: #252935;
     text-transform: uppercase;
 }
 .aside__section{padding: 5%;
-margin: 2%;    
-text-transform: capitalize}
+margin-bottom: 5%;    
+}
 
 .aside__button--x{position: fixed;
     top: 0px;
@@ -82,12 +91,34 @@ text-transform: capitalize}
 .aside__button--x i{color: var(--white-color);
 font-size: 1rem;}
 
-.aside__box{background-color:var(--button-aside-color)}
-input[type='range'],
+.aside__box{background-color:var(--button-aside-color);
+    width:100%;
+padding: 0% 2%;
+font-size: 1rem;
+text-transform: capitalize;}
+
+.aside__h3{
+    text-align: center;
+    margin: 10%;}
+
+.aside__div{
+margin: 3px;
+width: 100%;
+font-size: 1rem;
+}
+.aside__h4{
+    margin-bottom: 5px;
+}
+
+.out__text{
+    font-size: 0.7rem;    
+}
+/*input[type='range'],
 input[type='range']::-webkit-slider-runnable-track,
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
 }
+
 
 input[type=range]::-webkit-slider-thumb {
     background-color: #f6f5f5;
@@ -118,39 +149,43 @@ input[type=range]::-webkit-slider-thumb {
     background-color: #777;
     height: 3px;
   }
-
-
-.aside__h3{
-    text-align: center;
-    margin: 10%;}
-
-.aside__div{padding: 5px 12px;
-margin: 3px;
+*/
+.aside__color{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content:space-between;
+    width: 45%;
+}
+.aside__select{
+width: 45%;
+padding: 3%;
 }
 
-.aside__fieldset--back--button{
-    width: 40%;
-    margin: 2%;
-    color: black
-    ;
+.aside__filtro{width: 80%;
+    margin-top: 6%;   
 }
 
-
-.aside__fieldset--fuente button{background-color:var(--button-aside-color);
-    padding: 2%;
-
-}
-textarea, select, option, input{}
-
-
-.aside__fieldset--contorno--button{
+.aside__button{padding: 5%;
+    text-transform: capitalize;
     background-color: var(--button-aside-color);
-    padding: 2%;
-    margin: 1%;
+    color:var(--white-color)}
 
+.aside__div--style{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2px;
 }
-
-/*media queris*/
+.aside__div--article{
+display: flex;
+justify-content: space-between;
+flex-wrap: nowrap;
+align-items: center;}
+.aside__div--article article{
+    width:50%;
+    padding: 2%;
+}
 
 /*Monitors 1280*/
 @media(max-width:1280px){
@@ -169,6 +204,7 @@ textarea, select, option, input{}
         transition: all 0.3s linear 0s;
     }
 }
+
 /*smalls smarthphones*/
 @media (max-width: 480px){
     .main__div--black {width: 300px;
