@@ -1,32 +1,41 @@
-const capitalizar=(str)=>{
-    return (str.slice(0,1).toUpperCase() + str.slice(1))
-  }
+const $=(selector)=> document.querySelector(selector)
+
+$(".image__btn").addEventListener("click", ()=>{
+  $(".aside__image").style.display= "block"
+  $(".aside__text").style.display= "none"
+})
+
+$(".text__btn").addEventListener("click", ()=>{
+  $(".aside__image").style.display= "none"
+  $(".aside__text").style.display= "block"
+})
+
+$(".aside__button--x").addEventListener("click",()=>{
+  $("aside").style.display= "none"
+  //incompleta//
+})
+
+$("#url").addEventListener("input", () => {
+       const urlImage = $("#url").value
+       $(".main__div--center").style.width = "610px"
+       $(".main__div--center").style.height = "350px"
+       $(".main__div--center").style.backgroundSize = "contein"
+      $(".main__div--center").style.backgroundImage = `url(${urlImage})`
+   })
   
- /* <table width="80%">
-<script language="javascript">
-var r = new Array("00","33","66","99","CC","FF");
-var g = new Array("00","33","66","99","CC","FF");
-var b = new Array("00","33","66","99","CC","FF");
-for (i=0;i<r.length;i++){
-    for (j=0;j<g.length;j++) {
-        document.write("<tr>");
-        for (k=0;k<b.length;k++) {
-            var nuevoc = "#" + r[i] + g[j] + b[k];
-            document.write("<td bgcolor=\"" + nuevoc + "\" align=center>");
-            document.write(nuevoc);
-            document.write("</td>");
-        }
-        document.write("</tr>");
-    }
-}
-</script>
-</table>*/
-/*body.dark-theme
---color-header: #191e2b;
---color-background: #30343f;
---color-panel: #252935;
---color-boton-default: #393e49;
---color-boton-default-hover: #4e5565;
---color-text: #ffffff;
---font-primary: 'Open Sans', sans-serif;
---border-radius: 3px;*/
+   $("#color").addEventListener("input",()=>{
+    const imageBack= $("#color").value
+    $(".main__div--center").style.backgroundColor=imageBack
+  } )
+  //no sale
+$("#darken").addEventListener("input",()=>{
+  if("#darken".checked){
+  $(".main__div--center").style.backgroundMixBlendMode=$("#darken").value}
+})
+
+$("#brigthness__slider").addEventListener("input",()=>{
+  const filterValue= $("#brigthness__slider").value
+  $(".main__div--center").style.filter= 
+filterValue
+})
+
