@@ -49,6 +49,7 @@ position: relative;}
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 550px;
 }
 
 .main__div--black{
@@ -60,20 +61,28 @@ position: relative;}
     color: var(--blue-color);
     text-align: center;
     font-size: 2rem ;
-    margin:5%;
+    position: static;
+    padding: 35px 50px;
     text-transform: uppercase;
+    ;
 }
 
 .main__div--center{
     background-color: var(--black-color);
     height: 350px;
     width: 610px;
+    flex-grow: 1;
 }
 .main__button{
     background-color: #008000;
     padding: 1%;
     mix-blend-mode: lighten;
     margin-top: 20px;
+}
+
+.main__blackTop.transparent-mode,
+.main__blackBottom.transparent-mode{
+    background-color: transparent;
 }
 /*aside*/
 /*general*/

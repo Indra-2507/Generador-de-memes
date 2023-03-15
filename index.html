@@ -18,18 +18,14 @@
             </div>
     </header>
     <main>
-        <section class="main__section">
-            <div class="main__div--black main__blackTop " >
-                <h2 class="main__h2 main__top">top text</h2>
-            </div>
+        <div class="main__section">
+                <h2 class="main__h2 main__top main__div--black main__blackTop">top text</h2>
             <div class="main__div--center">
                 <img src="" alt="">
             </div>
-            <div class="main__div--black main__blackBottom">
-                <h2 class="main__h2 main__bottom">bottom text</h2>
-            </div>
+                <h2 class="main__h2 main__bottom main__div--black main__blackBottom">bottom text</h2>
             <button class="main__button"><i class="fa-solid fa-download"></i>descargar meme</button>
-        </section>
+        </div>
     </main>  
     <aside>
          <section class="aside__section aside__image">
@@ -43,8 +39,8 @@
             <fieldset class="aside__div ">
                 <h4 class="aside__h4">fondo</h4>
                 <article class="aside__div--article">
-                <input class="aside__input--color" type="color" id="color">
-                <select class="aside__box aside__select" name="fondo" id="">
+                <input class="aside__input--color" type="color" id="color" value="#FFFFFF">
+                <select class="aside__box aside__select" name="fondo" id="selectBlend">
                     <option value="unset" name="blends">ninguno</option>
                     <option id="lighten" value="lighten" name="blends">aclarar</option>
                     <option id="darken" value="darken" name="blends">oscurecer</option>
@@ -58,23 +54,23 @@
             <fieldset class="aside__div">
                 <h4 >filtros</h4>
                 <label for="brigthness__slider"> brillo</label>
-                <input class="aside__box" id="brigthness__slider" type="range" min="0" max="100" value="100"></label>
+                <input class="aside__box" id="brigthness__slider" type="range" min="0" max="1" value="1"></label>
                 <label for="opacity__slider">opacidad
-                <input class="aside__box" id="opacity__slider" type="range" min="0" max="100" value="100"></label>
+                <input class="aside__box" id="opacity__slider" type="range" min="0" max="1" value="1"></label>
                 <label for="contrast__slider">contraste
-                <input class="aside__box" id="contrast__slider" type="range" min="0" max="100" value="0"></label>
+                <input class="aside__box" id="contrast__slider" type="range" min="100" max="1000" value="0"></label>
                 <label for="blur__slider">desenfoque
-                <input class="aside__box"id="blur__slider" type="range" min="0" max="100" value="0"></label>
+                <input class="aside__box"id="blur__slider" type="range" min="0" max="10" value="0"></label>
                 <label for="grayscale__slider">escala de grises
                 <input class="aside__box" id="grayscale__slider" type="range" min="0" max="100" value="0"></label>
                 <label for="sepia__slider">sepia
                 <input class="aside__box" id="sepia__slider" type="range" min="0" max="100" value="0"></label>
                 <label for="hue__slider">hue
-                <input class="aside__box" id="hue__slider" type="range"min="0" max="100" value="0"></label>
+                <input class="aside__box" id="hue__slider" type="range"min="0" max="359" value="0"></label>
                 <label for="saturate__slider">saturado
-                <input class="aside__box" id="saturate__slider" type="range" min="0" max="100" value="0"></label>
+                <input class="aside__box" id="saturate__slider" type="range" min="100" max="1000" value="0"></label>
                 <label for="invert__slider">negativo
-                <input class="aside__box" id="invert__slider" type="range" min="0" max="100" value="0"></label>
+                <input class="aside__box" id="invert__slider" type="range" min="0" max="1" value="0"></label>
                 <button type="reset" class="aside__button aside__filter">reestablecer filtros</button>
             </fieldset>
         </form>  
@@ -108,36 +104,36 @@
                     <option value="timesnewroman">Times New Roman</option>
                 </select>
                     <div class="aside__div--button">
-                        <input class="aside__box aside__select" type="number" id="fontValue "value="40">
-                        <button class="aside__button"><i class="fa-solid fa-align-left"></i></button>
-                        <button class="aside__button"><i class="fa-solid fa-align-center"></i></button>
-                        <button class="aside__button"><i class="fa-sharp fa-solid fa-align-right"></i></button>
+                        <input class="aside__box aside__select" type="number" id="fontPx"value="40">
+                        <button id="alignLeft__btn" class="aside__button"><i class="fa-solid fa-align-left"></i></button>
+                        <button id="alignCenter__btn" class="aside__button"><i class="fa-solid fa-align-center"></i></button>
+                        <button id="alignRight__btn" class="aside__button"><i class="fa-sharp fa-solid fa-align-right"></i></button>
                     </div>
                 </fieldset>  
                 <fieldset class="aside__div--article">
                 <article>
                     <h4 class="aside__h4">color</h4>
-                    <input class="aside__box" type="color">
+                    <input id="letterFontColor" class="aside__box" type="color" value="#000000"  >
                 </article>
                 <article>
                     <h4 class="aside__h4">fondo</h4>
-                    <input class="aside__box" type="text">
+                    <input id="backFontColor" class="aside__box" type="color" value="#FFFFFF">
                 </article>      
-                <label class="aside__radio"><input type="checkbox" name="transparent" value="2"> &nbsp; fondo transparente</label>
+                <label class="aside__radio"><input id="transparentButton" type="checkbox" name="transparentButton" value="2"> &nbsp; fondo transparente</label>
             </fieldset>  
                 <fieldset class="aside__div">
                 <h4 class="aside__h4">contorno</h4>
-                <button class="aside__button" >ninguno</button>
-                <button class="aside__button">claro</button>
-                <button class="aside__button">oscuro</button>
+                <button id="strokeNone" class="aside__button" >ninguno</button>
+                <button id="strokeLigth" class="aside__button">claro</button>
+                <button id="strokeDark" class="aside__button">oscuro</button>
                 </fieldset>  
                 <fieldset class="aside__div">
                 <h4 class="aside__h4">espaciado</h4>
-                <input class="aside__box aside__select" type="number" value="35">
+                <input id="paddingLetters" class="aside__box aside__select" type="number" min="10" max="50" value="35">
                 </fieldset>  
                 <fieldset class="aside__div">
                 <h4 class="aside__h4">interlineado</h4>
-                <select class="aside__box" name="interlineado" id="">
+                <select class="aside__box" name="interlineado" id="selectLineHeigth">
                     <option value="0.8">0.8</option>
                     <option value="1">1</option>
                     <option value="1.2">1.2</option>
