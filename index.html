@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a7b05e6997.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
@@ -18,16 +20,16 @@
             </div>
     </header>
     <main>
-        <div class="main__section">
+        <section class="main__section">
+            <div id="mi-meme">
                 <h2 class="main__h2 main__top main__div--black main__blackTop">top text</h2>
-            <div class="main__div--center">
-                <img src="" alt="">
-            </div>
+                <article class="main__div--center"></article>
                 <h2 class="main__h2 main__bottom main__div--black main__blackBottom">bottom text</h2>
-            <button class="main__button"><i class="fa-solid fa-download"></i>descargar meme</button>
-        </div>
+            </div>
+        <button class="main__button" id="download-meme"><i class="fa-solid fa-download"></i>descargar meme</button>
+    </section>
     </main>  
-    <aside>
+    <aside class="acaEsta">
          <section class="aside__section aside__image">
             <button class="aside__button--x"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="aside__h3">imagen</h3>
@@ -39,7 +41,7 @@
             <fieldset class="aside__div ">
                 <h4 class="aside__h4">fondo</h4>
                 <article class="aside__div--article">
-                <input class="aside__input--color" type="color" id="color" value="#FFFFFF">
+                <input class="aside__input--color aside__box" type="color" id="color" value="#FFFFFF">
                 <select class="aside__box aside__select" name="fondo" id="selectBlend">
                     <option value="unset" name="blends">ninguno</option>
                     <option id="lighten" value="lighten" name="blends">aclarar</option>

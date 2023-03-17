@@ -1,5 +1,15 @@
 const $=(selector)=> document.querySelector(selector)
 
+$(".aside__button--x").addEventListener("click",()=>{
+  $("aside").style.display= "none" 
+})
+const hideElement = (element) => element.style.display="none"
+const hideElement2 = (element) => element.classList.add("hidden")
+
+const showElement = (element) => element.style.display = "block"
+const showElement2 = (element) => element.classList.remove("hidden")
+
+
 $(".image__btn").addEventListener("click", ()=>{
   $(".aside__image").style.display= "block"
   $(".aside__text").style.display= "none"
@@ -10,10 +20,31 @@ $(".text__btn").addEventListener("click", ()=>{
   $(".aside__text").style.display= "block"
 })
 
-$(".aside__button--x").addEventListener("click",()=>{
-  $("aside").style.display= "none"
-  //incompleta//
-})
+//Download button
+const downloadMeme = () => {
+  domtoimage.toBlob($('#mi-meme')).then((blob) => {
+      saveAs(blob, 'mi-meme.png')
+    })
+}
+$("#download-meme").addEventListener('click', downloadMeme)
+
+//hide aside 
+var mql = window.matchMedia('(max-width: 1280px)');
+
+function screenTest(e) {
+  if (e.matches) {
+    hideElement($("aside"))
+  } else {
+
+    showElement($("aside"))
+  }
+}
+mql.addListener(screenTest);
+
+//aparecer aside cuando toco los botones
+//modo oscuro
+//boton de reset
+//aside
  // Put Url Image
 $("#url").addEventListener("input", () => {
        const urlImage = $("#url").value
@@ -153,23 +184,28 @@ $("#letterFontColor").addEventListener("input", ()=>{
   $(".main__bottom").style.color =changeFontColor
 })
 
-// change backgruond div font
+// change background div font
 $("#backFontColor").addEventListener("input",()=>{
   const changeBackColor = $("#backFontColor").value
   $(".main__blackTop").style.backgroundColor = changeBackColor
   $(".main__blackBottom").style.backgroundColor =changeBackColor
 })
 
-// transparent background
-//se pone transparente pero el div negro no ocupa el lugar
-//el toggle no fuinciona aca
+// Transparent background
+
 $("#transparentButton").addEventListener("click", ()=>{
   if ($("#transparentButton").checked){
-  $(".main__blackTop").classList.toggle("transparent-mode")
-  $(".main__blackBottom").classList.toggle("transparent-mode")}
+  $(".main__blackTop").style.backgroundColor= "transparent"
+  $(".main__blackBottom").style.backgroundColor= "transparent"
+  
+}
+  else{
+    $(".main__blackBottom").style.backgroundColor=  $("#backFontColor").value
+    $(".main__blackTop").style.backgroundColor= $("#backFontColor").value }
+
 })
 
-//contorno texto
+//Text Stroke
 $("#strokeNone").addEventListener("click",(e)=>{
   e.preventDefault()
   $(".main__top").style.webkitTextStroke= "0px"
@@ -185,8 +221,9 @@ $("#strokeDark").addEventListener("click",(e)=>{
   $(".main__top").style.webkitTextStroke = "1.5px black"
   $(".main__bottom").style.webkitTextStroke ="2px black"
 })
+
 //Space 
-//tengo que achicar los divs
+
 $("#paddingLetters").addEventListener("input", ()=>{
   const paddingDiv= $("#paddingLetters").value
   $(".main__blackTop").style.padding = `${paddingDiv}px` 
@@ -204,7 +241,6 @@ $("#selectLineHeigth").addEventListener("click",()=>{
   const interlineado= $("#selectLineHeigth").value
   $(".main__bottom").style.lineHeight= `${interlineado}`
 })
-
 
 
 
