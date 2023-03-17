@@ -23,15 +23,16 @@
         <section class="main__section">
             <div id="mi-meme">
                 <h2 class="main__h2 main__top main__div--black main__blackTop">top text</h2>
-                <article class="main__div--center"></article>
+                <article class="main__div--center">
+                </article>
                 <h2 class="main__h2 main__bottom main__div--black main__blackBottom">bottom text</h2>
             </div>
         <button class="main__button" id="download-meme"><i class="fa-solid fa-download"></i>descargar meme</button>
     </section>
     </main>  
-    <aside class="acaEsta">
+    <aside>
          <section class="aside__section aside__image">
-            <button class="aside__button--x"><i class="fa-solid fa-xmark"></i></button>
+            <button class="aside__button--x x__image"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="aside__h3">imagen</h3>
             <form action="">
             <fieldset class="aside__div">
@@ -56,9 +57,9 @@
             <fieldset class="aside__div">
                 <h4 >filtros</h4>
                 <label for="brigthness__slider"> brillo</label>
-                <input class="aside__box" id="brigthness__slider" type="range" min="0" max="1" value="1"></label>
+                <input class="aside__box" id="brigthness__slider" type="range" min="0" max="1" value="1" step=" 0.1"></label>
                 <label for="opacity__slider">opacidad
-                <input class="aside__box" id="opacity__slider" type="range" min="0" max="1" value="1"></label>
+                <input class="aside__box" id="opacity__slider" type="range" min="0" max="1" value="1" step="0.1"></label>
                 <label for="contrast__slider">contraste
                 <input class="aside__box" id="contrast__slider" type="range" min="100" max="1000" value="0"></label>
                 <label for="blur__slider">desenfoque
@@ -73,13 +74,13 @@
                 <input class="aside__box" id="saturate__slider" type="range" min="100" max="1000" value="0"></label>
                 <label for="invert__slider">negativo
                 <input class="aside__box" id="invert__slider" type="range" min="0" max="1" value="0"></label>
-                <button type="reset" class="aside__button aside__filter">reestablecer filtros</button>
+                <button class="aside__button" id="aside__filter">reestablecer filtros</button>
             </fieldset>
         </form>  
         </section>
     
      <section class="aside__section d none aside__text d-none">
-            <button class="aside__button--x"><i class="fa-solid fa-xmark"></i></button>
+            <button class="aside__button--x  x__text"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="aside__h3">texto</h3>
             <form action="">
               <fieldset class="aside__div">
@@ -99,7 +100,7 @@
                     <option value="Arial Narrow Bold">arial black</option>
                     <option value="americantypewriter">American Typerwriter</option>
                     <option value="andalemono">Andale Mono</option>
-                    <option value="comicsanzms">Comic Sanz MS</option>
+                    <option value="Open Sans">Comic Sanz MS</option>
                     <option value="helvetica">Helvetica</option>
                     <option value="impact">Impact</option>
                     <option value="verdana">Verdana</option>
