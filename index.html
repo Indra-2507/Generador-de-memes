@@ -10,21 +10,23 @@
     <script src="https://kit.fontawesome.com/a7b05e6997.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<body>
+<body data-theme="ligth-mode">
     <header>
             <h1 class="header__h1">generador de memes</h1>
             <div class="header__div">
                 <button class="header__button image__btn"><i class="fa-solid fa-image"></i>&nbsp; imagen</button>
                 <button class="header__button text__btn"><i class="fa-solid fa-font"></i>&nbsp;texto</button>
-                <button class="header__button dark__mode"><i class="fa-solid fa-lightbulb"></i>&nbsp;modo oscuro</button>
+                <button class="header__button dark__mode"><i class="fa-solid fa-lightbulb" id="iDark"></i>&nbsp;modo oscuro</button>
+                <button class="header__button ligth__btn dark__mode"><i class="fa-regular fa-lightbulb" id="iLigth" ></i>&nbsp;modo claro</button> 
             </div>
+
     </header>
     <main>
         <section class="main__section">
             <div id="mi-meme">
                 <h2 class="main__h2 main__top main__div--black main__blackTop">top text</h2>
-                <article class="main__div--center">
-                </article>
+                <div src alt class="main__div--center">
+                </div>
                 <h2 class="main__h2 main__bottom main__div--black main__blackBottom">bottom text</h2>
             </div>
         <button class="main__button" id="download-meme"><i class="fa-solid fa-download"></i>descargar meme</button>
@@ -57,24 +59,24 @@
             <fieldset class="aside__div">
                 <h4 >filtros</h4>
                 <label for="brigthness__slider"> brillo</label>
-                <input class="aside__box" id="brigthness__slider" type="range" min="0" max="1" value="1" step=" 0.1"></label>
+                <input class="aside__box" id="brigthness__slider" type="range" min="0" max="1" value="1" step="0.1"></label>
                 <label for="opacity__slider">opacidad
                 <input class="aside__box" id="opacity__slider" type="range" min="0" max="1" value="1" step="0.1"></label>
                 <label for="contrast__slider">contraste
-                <input class="aside__box" id="contrast__slider" type="range" min="100" max="1000" value="0"></label>
+                <input class="aside__box" id="contrast__slider" type="range" min="100" max="1000" step="1%" value="100" ></label>
                 <label for="blur__slider">desenfoque
-                <input class="aside__box"id="blur__slider" type="range" min="0" max="10" value="0"></label>
+                <input class="aside__box"id="blur__slider" type="range" min="0" max="10" step="0.1" value="0" ></label>
                 <label for="grayscale__slider">escala de grises
-                <input class="aside__box" id="grayscale__slider" type="range" min="0" max="100" value="0"></label>
+                <input class="aside__box" id="grayscale__slider" type="range" min="0" max="100" step="1" value="0" ></label>
                 <label for="sepia__slider">sepia
-                <input class="aside__box" id="sepia__slider" type="range" min="0" max="100" value="0"></label>
+                <input class="aside__box" id="sepia__slider" type="range" min="0" max="100" step="1" value="0" ></label>
                 <label for="hue__slider">hue
-                <input class="aside__box" id="hue__slider" type="range"min="0" max="359" value="0"></label>
+                <input class="aside__box" id="hue__slider" type="range"min="0" max="359" step= "1" value="0"></label>
                 <label for="saturate__slider">saturado
-                <input class="aside__box" id="saturate__slider" type="range" min="100" max="1000" value="0"></label>
+                <input class="aside__box" id="saturate__slider" type="range" min="100" max="1000" step="10" value="0"></label>
                 <label for="invert__slider">negativo
-                <input class="aside__box" id="invert__slider" type="range" min="0" max="1" value="0"></label>
-                <button class="aside__button" id="aside__filter">reestablecer filtros</button>
+                <input class="aside__box" id="invert__slider" type="range" min="0" max="1" step="0.1" value="0"></label>
+                <button class="aside__button" id="reset__button">reestablecer filtros</button>
             </fieldset>
         </form>  
         </section>

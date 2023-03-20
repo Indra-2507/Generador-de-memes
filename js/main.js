@@ -1,3 +1,6 @@
+//GENERAL FUNCTIONS
+//They are used in differents times during the proyect
+
 const $=(selector)=> document.querySelector(selector)
 
 const hideElement = (element) => element.style.display="none"
@@ -6,37 +9,45 @@ const hideElement2 = (element) => element.classList.add("hidden")
 const showElement = (element) => element.style.display = "block"
 const showElement2 = (element) => element.classList.remove("hidden")
 
-//change aside image/ aside text
+//MAIN FUNCTIONS
+//Functions to change between section "aside__image" and "aside__text" by touching buttons
 $(".image__btn").addEventListener("click", ()=>{
   showElement($(".aside__image"))
+  showElement($("aside"))
   hideElement($(".aside__text"))
 })
 
 $(".text__btn").addEventListener("click", ()=>{
   showElement($(".aside__text"))
+  showElement($("aside"))
   hideElement($(".aside__image"))
 })
 
-// x button
+// Functions to close aside section by button, called "x button"
 $(".x__image").addEventListener("click",()=>{
   hideElement($(".aside__image"))
   hideElement($(".aside__text"))
+  hideElement($("aside"))
 })
 
 $(".x__text").addEventListener("click",()=>{
   hideElement($(".aside__image"))
   hideElement($(".aside__text"))
+  hideElement($("aside"))
 })
-//dark-mode
-/*const ligthMode = (element) => element.classList.add("ligth-theme")
+//Functions to change between "dark-mode" and "ligth-mode"
+$("body").removeAttribute("data-theme")
+hideElement( $(".ligth__btn"))
 $(".dark__mode").addEventListener("click", ()=>{
-ligthMode($("body"))
-})*/
-$(".dark__mode").addEventListener("click", ()=>{
-  $("body").classList.toggle(".ligth-theme")
+  showElement( $(".ligth__btn"))
+  hideElement( $(".dark__mode"))
+  $("body").setAttribute("data-theme", "ligth-mode")
 })
-
-
+$(".ligth__btn").addEventListener("click",()=>{
+  hideElement( $(".ligth__btn"))
+  showElement( $(".dark__mode"))
+  $("body").removeAttribute("data-theme", "ligth-mode")
+})
 
 //Download button
 const downloadMeme = () => {
@@ -44,9 +55,7 @@ const downloadMeme = () => {
       saveAs(blob, 'mi-meme.png')
     })
 }
-$("#download-meme").addEventListener('click', downloadMeme)
-
-//hide aside in media queris 
+//This functio is used to hide aside in media queris 
 var mql = window.matchMedia('(max-width: 1280px)');
 
 function screenTest(e) {
@@ -58,9 +67,11 @@ function screenTest(e) {
   }
 }
 mql.addListener(screenTest);
+$("#download-meme").addEventListener('click', downloadMeme)
 
-//aside
- // Put Url Image
+
+//IMAGE ASIDE SECTION
+//Function used to insert Url Image in the box
 $("#url").addEventListener("input", () => {
        const urlImage = $("#url").value
        $(".main__div--center").style.width = "610px"
@@ -69,71 +80,53 @@ $("#url").addEventListener("input", () => {
       $(".main__div--center").style.backgroundImage = `url(${urlImage})`
    })
   
-   //Change background color
+  //Function to change the background color of the image
    $("#color").addEventListener("input",()=>{
     const imageBack= $("#color").value
     $(".main__div--center").style.backgroundColor=imageBack
   } )
 
-//Blend selector
+//Function tu use de background blend Mode selector
 $("#selectBlend").addEventListener("click", ()=>{
   $(".main__div--center").style.backgroundBlendMode= $("#selectBlend").value
 })
 
-//filter slide
-$("#brigthness__slider").addEventListener("input", () => {
-       const rangeValue = $("#brigthness__slider").value
-    $(".main__div--center").style.filter = `brightness(${rangeValue})`
-   })
-   $("#opacity__slider").addEventListener("input", () => {
-    const rangeValue = $("#opacity__slider").value
- $(".main__div--center").style.filter = `opacity(${rangeValue})`
-})
-$("#contrast__slider").addEventListener("input", () => {
-  const rangeValue = $("#contrast__slider").value
-$(".main__div--center").style.filter = `contrast(${rangeValue}%)`
-})
-$("#blur__slider").addEventListener("input", () => {
-  const rangeValue = $("#blur__slider").value
-$(".main__div--center").style.filter = `blur(${rangeValue}px)`
-})
-$("#grayscale__slider").addEventListener("input", () => {
-  const rangeValue = $("#grayscale__slider").value
-$(".main__div--center").style.filter = `grayscale(${rangeValue}%)`
-})
-$("#sepia__slider").addEventListener("input", () => {
-  const rangeValue = $("#sepia__slider").value
-$(".main__div--center").style.filter = `sepia(${rangeValue}%)`
-})
-$("#hue__slider").addEventListener("input", () => {
-  const rangeValue = $("#hue__slider").value
-$(".main__div--center").style.filter = `hue-rotate(${rangeValue}deg)`
-})
-$("#saturate__slider").addEventListener("input", () => {
-  const rangeValue = $("#saturate__slider").value
-$(".main__div--center").style.filter = `saturate(${rangeValue}%)`
-})
-$("#invert__slider").addEventListener("input", () => {
-  const rangeValue = $("#invert__slider").value
-$(".main__div--center").style.filter = `invert(${rangeValue})`
-})
+//Function to use input type range for filters
 
-//boton de reset
-$("#aside__filter").addEventListener("click", (e)=>{
+const rangeValue=()=>{
+  $(".main__div--center").style.filter= `brightness(${$("#brigthness__slider").value})
+  opacity(${$("#opacity__slider").value}) contrast(${$("#contrast__slider").value}%) blur(${$("#blur__slider").value}px) grayscale(${$("#grayscale__slider").value}%) sepia(${$("#sepia__slider").value}%) hue-rotate(${$("#hue__slider").value}deg) saturate(${$("#saturate__slider").value}%) invert(${$("#invert__slider").value})` 
+}
+
+$("#brigthness__slider").addEventListener("input", rangeValue)
+$("#opacity__slider").addEventListener("input",rangeValue)
+$("#contrast__slider").addEventListener("input",rangeValue)
+$("#blur__slider").addEventListener("input",rangeValue)
+$("#grayscale__slider").addEventListener("input",rangeValue)
+$("#sepia__slider").addEventListener("input",rangeValue)
+$("#hue__slider").addEventListener("input",rangeValue)
+$("#saturate__slider").addEventListener("input",rangeValue)
+$("#invert__slider").addEventListener("input",rangeValue)
+
+
+//Button for reset input type range for filters
+
+$("#reset__button").addEventListener("click", (e)=>{
   e.preventDefault()
-  $("#brigthness__slider").value=1
-  $("#opacity__slider").value=1
-  $("#contrast__slider").value=0
-  $("#blur__slider").value=0
-  $("#grayscale__slider").value=0
-  $("#sepia__slider").value=0
-  $("#hue__slider").value=0
-  $("#saturate__slider").value=0
-  $("#invert__slider").value=0
+  $("#brigthness__slider").value="1"
+  $("#opacity__slider").value="1"
+  $("#contrast__slider").value="0"
+  $("#blur__slider").value="0"
+  $("#grayscale__slider").value="0"
+  $("#sepia__slider").value="0"
+  $("#hue__slider").value="0"
+  $("#saturate__slider").value="0"
+  $("#invert__slider").value="0"
+  $(".main__div--center").style.filter= "none"
 })
 
-//text form
-//Text transform
+//TEXT ASIDE SECTION
+//Functions to modify the top text and the bottom text
 $("#topText").addEventListener("input", ()=>{
   $(".main__top").innerText = $("#topText").value
 })
@@ -142,31 +135,26 @@ $("#bottomText").addEventListener("input", ()=>{
   $(".main__bottom").innerText = $("#bottomText").value
 })
 
-//Checked button
+//Functions to hide top text and bottom text, using radio buttons
 $("#outTextTop").addEventListener("click", () => {
   if ($("#outTextTop").checked ){
-    $(".main__blackTop").style.display="none"
-   
+   hideElement($(".main__blackTop"))
   }
     else{
-      $(".main__blackTop").style.display="block"
-     
+      showElement($(".main__blackTop"))
  }
 })
-
 
 $("#outTextBottom").addEventListener("click", () => {
   if ($("#outTextBottom").checked ){
     $(".main__blackBottom").style.display="none"
-    
-  }
-    else{
+  }else
+    {
       $(".main__blackBottom").style.display="block"
-      
     }
 })
 
-// Fonts
+//Funtion for changing fonts style
 
  $("#fonts").addEventListener("input", () => {
   $(".main__top").style.fontFamily = $("#fonts").value
@@ -174,14 +162,14 @@ $("#outTextBottom").addEventListener("click", () => {
  })
 //america, andale mono, comics sanz
 
-//Font Size
+//Function for changing the font size of text
 $("#fontPx").addEventListener("input",() =>{
   const fontsSize= ($("#fontPx").value)
 $(".main__top").style.fontSize =`${fontsSize}px`
 $(".main__bottom").style.fontSize =`${fontsSize}px`
 })
 
-//Align buttons
+//This buttons are used tu align(left, center, rigth) the text of the image
 $("#alignLeft__btn").addEventListener("click",(e)=>{
   e.preventDefault()
   $(".main__top").style.textAlign = "left"
@@ -200,36 +188,32 @@ $("#alignRight__btn").addEventListener("click",(e)=>{
 $(".main__bottom").style.textAlign ="right"
 })
 
-// Change font color
-
+//This function is used to change the color of the text
 $("#letterFontColor").addEventListener("input", ()=>{
   const changeFontColor= $("#letterFontColor").value
   $(".main__top").style.color = changeFontColor
   $(".main__bottom").style.color =changeFontColor
 })
 
-// change background div font
+//Function to change the background color of the text
 $("#backFontColor").addEventListener("input",()=>{
   const changeBackColor = $("#backFontColor").value
   $(".main__blackTop").style.backgroundColor = changeBackColor
   $(".main__blackBottom").style.backgroundColor =changeBackColor
 })
 
-// Transparent background
+//Funtion to put the background of the text in transparent mode
 
-$("#transparentButton").addEventListener("click", ()=>{
+$(" #transparentButton").addEventListener("click", ()=>{
   if ($("#transparentButton").checked){
   $(".main__blackTop").style.backgroundColor= "transparent"
   $(".main__blackBottom").style.backgroundColor= "transparent"
-  
-}
-  else{
+}else{
     $(".main__blackBottom").style.backgroundColor=  $("#backFontColor").value
     $(".main__blackTop").style.backgroundColor= $("#backFontColor").value }
-
 })
 
-//Text Stroke
+//Function to change the stroke style of the letters
 $("#strokeNone").addEventListener("click",(e)=>{
   e.preventDefault()
   $(".main__top").style.webkitTextStroke= "0px"
@@ -246,16 +230,14 @@ $("#strokeDark").addEventListener("click",(e)=>{
   $(".main__bottom").style.webkitTextStroke ="2px black"
 })
 
-//Space 
-
+//Function to grow and decrease the space to write  
 $("#paddingLetters").addEventListener("input", ()=>{
   const paddingDiv= $("#paddingLetters").value
   $(".main__blackTop").style.padding = `${paddingDiv}px` 
   $(".main__blackBottom").style.padding =`${paddingDiv}px` 
 })
 
-
-//Line heigth selector
+//Funtion to change the line heigth selector
 $("#selectLineHeigth").addEventListener("click",()=>{
   const interlineado= $("#selectLineHeigth").value
   $(".main__top").style.lineHeight= `${interlineado}`
@@ -265,21 +247,3 @@ $("#selectLineHeigth").addEventListener("click",()=>{
   const interlineado= $("#selectLineHeigth").value
   $(".main__bottom").style.lineHeight= `${interlineado}`
 })
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
