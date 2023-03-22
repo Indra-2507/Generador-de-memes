@@ -1,4 +1,5 @@
 //GENERAL FUNCTIONS
+
 //They are used in differents times during the proyect
 
 const $=(selector)=> document.querySelector(selector)
@@ -10,7 +11,9 @@ const showElement = (element) => element.style.display = "block"
 const showElement2 = (element) => element.classList.remove("hidden")
 
 //MAIN FUNCTIONS
+
 //Functions to change between section "aside__image" and "aside__text" by touching buttons
+
 $(".image__btn").addEventListener("click", ()=>{
   showElement($(".aside__image"))
   showElement($("aside"))
@@ -24,6 +27,7 @@ $(".text__btn").addEventListener("click", ()=>{
 })
 
 // Functions to close aside section by button, called "x button"
+
 $(".x__image").addEventListener("click",()=>{
   hideElement($(".aside__image"))
   hideElement($(".aside__text"))
@@ -35,27 +39,35 @@ $(".x__text").addEventListener("click",()=>{
   hideElement($(".aside__text"))
   hideElement($("aside"))
 })
+
 //Functions to change between "dark-mode" and "ligth-mode"
-$("body").removeAttribute("data-theme")
+
+$("body").removeAttribute("data__theme")
+
 hideElement( $(".ligth__btn"))
+
 $(".dark__mode").addEventListener("click", ()=>{
   showElement( $(".ligth__btn"))
   hideElement( $(".dark__mode"))
-  $("body").setAttribute("data-theme", "ligth-mode")
+  $("body").setAttribute("data__theme", "ligth__mode")
 })
+
 $(".ligth__btn").addEventListener("click",()=>{
   hideElement( $(".ligth__btn"))
   showElement( $(".dark__mode"))
-  $("body").removeAttribute("data-theme", "ligth-mode")
+  $("body").removeAttribute("data__theme", "ligth__mode")
 })
 
 //Download button
+
 const downloadMeme = () => {
-  domtoimage.toBlob($('#mi-meme')).then((blob) => {
-      saveAs(blob, 'mi-meme.png')
+  domtoimage.toBlob($('#div__mi--meme')).then((blob) => {
+      saveAs(blob, 'div__mi--meme.png')
     })
 }
+
 //This function is used to hide aside in media queris 
+
 var mql = window.matchMedia('(max-width: 1280px)');
 
 function screenTest(e) {
@@ -71,19 +83,22 @@ $("#download-meme").addEventListener('click', downloadMeme)
 
 
 //IMAGE ASIDE SECTION
+
 //Function used to insert Url Image in the box
 $("#url").addEventListener("input", () => {
-       const urlImage = $("#url").value
-      $(".main__div--center").style.backgroundImage = `url(${urlImage})`  
+    const urlImage = $("#url").value
+    $(".main__div--center").style.backgroundImage = `url(${urlImage})`  
    })
   
-  //Function to change the background color of the image
-   $("#color").addEventListener("input",()=>{
+//Function to change the background color of the image
+
+$("#color").addEventListener("input",()=>{
     const imageBack= $("#color").value
     $(".main__div--center").style.backgroundColor=imageBack
   } )
 
 //Function tu use de background blend Mode selector
+
 $("#selectBlend").addEventListener("click", ()=>{
   $(".main__div--center").style.backgroundBlendMode= $("#selectBlend").value
 })
@@ -123,16 +138,19 @@ $("#reset__button").addEventListener("click", (e)=>{
 })
 
 //TEXT ASIDE SECTION
+
 //Functions to modify the top text and the bottom text
+
 $("#topText").addEventListener("input", ()=>{
-  $(".main__top").innerText = $("#topText").value
+  $(".main__blackTop").innerText = $("#topText").value
 })
 
 $("#bottomText").addEventListener("input", ()=>{
-  $(".main__bottom").innerText = $("#bottomText").value
+  $(".main__blackBottom").innerText = $("#bottomText").value
 })
 
 //Functions to hide top text and bottom text, using radio buttons
+
 $("#outTextTop").addEventListener("click", () => {
   if ($("#outTextTop").checked ){
    hideElement($(".main__blackTop"))
@@ -153,46 +171,49 @@ $("#outTextBottom").addEventListener("click", () => {
 
 //Funtion for changing fonts style
 
- $("#fonts").addEventListener("input", () => {
-  $(".main__top").style.fontFamily = $("#fonts").value
-     $(".main__bottom").style.fontFamily = $("#fonts").value
+$("#fonts").addEventListener("input", () => {
+  $(".main__blackTop").style.fontFamily = $("#fonts").value
+  $(".main__blackBottom").style.fontFamily = $("#fonts").value
  })
-//america, andale mono, comics sanz
 
 //Function for changing the font size of text
+
 $("#fontPx").addEventListener("input",() =>{
   const fontsSize= ($("#fontPx").value)
-$(".main__top").style.fontSize =`${fontsSize}px`
-$(".main__bottom").style.fontSize =`${fontsSize}px`
+$(".main__blackTop").style.fontSize =`${fontsSize}px`
+$(".main__blackBottom").style.fontSize =`${fontsSize}px`
 })
 
 //This buttons are used tu align(left, center, rigth) the text of the image
+
 $("#alignLeft__btn").addEventListener("click",(e)=>{
   e.preventDefault()
-  $(".main__top").style.textAlign = "left"
-$(".main__bottom").style.textAlign ="left"
+  $(".main__blackTop").style.textAlign = "left"
+  $(".main__blackBottom").style.textAlign ="left"
 })
 
 $("#alignCenter__btn").addEventListener("click",(e)=>{
   e.preventDefault()
-  $(".main__top").style.textAlign = "center"
-$(".main__bottom").style.textAlign ="center"
+  $(".main__blackTop").style.textAlign = "center"
+  $(".main__blackBottom").style.textAlign ="center"
 })
 
 $("#alignRight__btn").addEventListener("click",(e)=>{
   e.preventDefault()
-  $(".main__top").style.textAlign = "right"
-$(".main__bottom").style.textAlign ="right"
+  $(".main__blackTop").style.textAlign = "right"
+  $(".main__blackBottom").style.textAlign ="right"
 })
 
 //This function is used to change the color of the text
+
 $("#letterFontColor").addEventListener("input", ()=>{
   const changeFontColor= $("#letterFontColor").value
-  $(".main__top").style.color = changeFontColor
-  $(".main__bottom").style.color =changeFontColor
+  $(".main__blackTop").style.color = changeFontColor
+  $(".main__blackBottom").style.color =changeFontColor
 })
 
 //Function to change the background color of the text
+
 $("#backFontColor").addEventListener("input",()=>{
   const changeBackColor = $("#backFontColor").value
   $(".main__blackTop").style.backgroundColor = changeBackColor
@@ -207,43 +228,49 @@ $(" #transparentButton").addEventListener("click", ()=>{
   $(".main__blackTop").style.position="absolute"
   $(".main__blackBottom").style.backgroundColor= "transparent"
   $(".main__blackBottom").style.position="absolute"   
-} else
+}else
   { $(".main__blackBottom").style.backgroundColor=  $("#backFontColor").value
     $(".main__blackTop").style.position="absolute"
     $(".main__blackTop").style.backgroundColor= $("#backFontColor").value
     $(".main__blackBottom").style.position="absolute"
-    $("#mi-meme").style.height="450px"
+    $("#div__mi--meme").style.height="450px"
     $(".main__div--center").style.marginTop="100px"
-  }
+}
   })
+
   $(" #transparentButton").addEventListener("click", ()=>{
     if ($("#transparentButton").checked){
     $(".main__blackTop").style.backgroundColor= "transparent"
     $(".main__blackTop").style.position="absolute"
     $(".main__blackBottom").style.backgroundColor= "transparent"
     $(".main__blackBottom").style.position="absolute"
-    $("#mi-meme").style.height="550px"   
+    $("#div__mi--meme").style.height="550px"   
     $(".main__div--center").style.marginTop="0px"
   }})
 //Note for the profesor: I don't like the way a solve this function, but I really don't have any other idea too make it works.
+
 //Function to change the stroke style of the letters
+
 $("#strokeNone").addEventListener("click",(e)=>{
   e.preventDefault()
-  $(".main__top").style.webkitTextStroke= "0px"
-  $(".main__bottom").style.webkitTextStroke="0px"
+  $(".main__blackTop").style.webkitTextStroke= "0px"
+  $(".main__blackBottom").style.webkitTextStroke="0px"
 })
+
 $("#strokeLigth").addEventListener("click",(e)=>{
   e.preventDefault()
-  $(".main__top").style.webkitTextStroke = "1.5px white"
-  $(".main__bottom").style.webkitTextStroke ="2px white"
+  $(".main__blackTop").style.webkitTextStroke = "1.5px white"
+  $(".main__blackBottom").style.webkitTextStroke ="2px white"
 })
+
 $("#strokeDark").addEventListener("click",(e)=>{
   e.preventDefault()
-  $(".main__top").style.webkitTextStroke = "1.5px black"
-  $(".main__bottom").style.webkitTextStroke ="2px black"
+  $(".main__balckTop").style.webkitTextStroke = "1.5px black"
+  $(".main__blackBottom").style.webkitTextStroke ="2px black"
 })
 
 //Function to grow and decrease the space to write  
+
 $("#paddingLetters").addEventListener("input", ()=>{
   const paddingDiv= $("#paddingLetters").value
   $(".main__blackTop").style.height= "auto"
@@ -253,14 +280,15 @@ $("#paddingLetters").addEventListener("input", ()=>{
 })
 
 //Funtion to change the line heigth selector
+
 $("#selectLineHeigth").addEventListener("click",()=>{
   const interlineado= $("#selectLineHeigth").value
-  $(".main__top").style.lineHeight= `${interlineado}`
+  $(".main__blackTop").style.lineHeight= `${interlineado}`
 })
 
 $("#selectLineHeigth").addEventListener("click",()=>{
   const interlineado= $("#selectLineHeigth").value
-  $(".main__bottom").style.lineHeight= `${interlineado}`
+  $(".main__blackBottom").style.lineHeight= `${interlineado}`
 })
 
 //Funtion to put the background of the text in transparent mode
@@ -276,16 +304,17 @@ $(" #transparentButton").addEventListener("click", ()=>{
     $(".main__blackTop").style.position="absolute"
     $(".main__blackTop").style.backgroundColor= $("#backFontColor").value
     $(".main__blackBottom").style.position="absolute"
-    $("#mi-meme").style.height="450px"
+    $("#div__mi--meme").style.height="450px"
     $(".main__div--center").style.marginTop="100px"
-  }
+}
   })
-  $(" #transparentButton").addEventListener("click", ()=>{
+
+$(" #transparentButton").addEventListener("click", ()=>{
     if ($("#transparentButton").checked){
     $(".main__blackTop").style.backgroundColor= "transparent"
     $(".main__blackTop").style.position="absolute"
     $(".main__blackBottom").style.backgroundColor= "transparent"
     $(".main__blackBottom").style.position="absolute"
-    $("#mi-meme").style.height="550px"   
+    $("#div__mi--meme").style.height="550px"   
     $(".main__div--center").style.marginTop="0px"
   }})

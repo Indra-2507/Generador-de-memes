@@ -4,151 +4,176 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Links-->
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js" integrity="sha512-01CJ9/g7e8cUmY0DFTMcUw/ikS799FHiOA0eyHsUWfOetgbx/t6oV4otQ5zXKQyIrQGTHSmRVPIgrgLcZi/WMA==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a7b05e6997.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<body data-theme="ligth-mode">
+<body data__theme="ligth__mode">
     <header>
-            <h1 class="header__h1">generador de memes</h1>
-            <div class="header__div">
-                <button class="header__button image__btn"><i class="fa-solid fa-image"></i>&nbsp; imagen</button>
-                <button class="header__button text__btn"><i class="fa-solid fa-font"></i>&nbsp;texto</button>
-                <button class="header__button dark__mode"><i class="fa-solid fa-lightbulb" id="iDark"></i>&nbsp;modo oscuro</button>
-                <button class="header__button ligth__btn dark__mode"><i class="fa-regular fa-lightbulb" id="iLigth" ></i>&nbsp;modo claro</button> 
-            </div>
-
+        <h1 class="header__h1">generador de memes</h1>
+        <div class="header__div">
+            <button class="header__button image__btn">
+                <i class="fa-solid fa-image"></i>&nbsp; imagen
+            </button>
+            <button class="header__button text__btn">
+                <i class="fa-solid fa-font"></i>&nbsp;texto
+            </button>
+            <button class="header__button dark__mode">
+                <i class="fa-solid fa-lightbulb" id="iDark"></i>&nbsp;modo oscuro
+            </button>
+            <button class="header__button ligth__btn dark__mode">
+                <i class="fa-regular fa-lightbulb" id="iLigth"></i>&nbsp;modo claro
+            </button> 
+        </div>
     </header>
     <main>
         <section class="main__section">
-            <div id="mi-meme">
-                <div class="main__h2 main__top main__div--black main__blackTop">TOP TEXT</div>
-                <div class="main__div--center">
-                </div>
-                <div class="main__h2 main__bottom main__div--black main__blackBottom">BOTTOM TEXT</div>
+            <div id="div__mi--meme">
+                <div class="main__tittle main__blackTop">TOP TEXT</div>
+                <div class="main__div--center"></div>
+                <div class="main__tittle main__blackBottom">BOTTOM TEXT</div>
             </div>
-        <button class="main__button" id="download-meme"><i class="fa-solid fa-download"></i>descargar meme</button>
-    </section>
+            <button class="main__button" id="download-meme"><i class="fa-solid fa-download"></i>descargar meme</button>
+        </section>
     </main>  
     <aside>
-         <section class="aside__section aside__image">
-            <button class="aside__button--x x__image"><i class="fa-solid fa-xmark"></i></button>
+        <section class="aside__section aside__image">
+            <button class="aside__button--x x__image">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
             <h3 class="aside__h3">imagen</h3>
             <form action="">
-            <fieldset class="aside__div">
-            <h4 class="aside__h4">url</h4>
-                <input class="aside__box" id="url" type="url" name="imagePlace">
-            </fieldset>  
-            <fieldset class="aside__div ">
-                <h4 class="aside__h4">fondo</h4>
-                <article class="aside__div--article">
-                <input class="aside__input--color aside__box" type="color" id="color" value="#FFFFFF">
-                <select class="aside__box aside__select" name="fondo" id="selectBlend">
-                    <option value="unset" name="blends">ninguno</option>
-                    <option id="lighten" value="lighten" name="blends">aclarar</option>
-                    <option id="darken" value="darken" name="blends">oscurecer</option>
-                    <option id="difference" value="difference" name="blends">diferencia</option>
-                    <option id="luminosity" value="luminosity" name="blends">luminosidad</option>
-                    <option id="multiply" value="multiply" name="blends">multiplicar</option>
-                </select>
-                <button type="menu"></button>
-            </article>
-        </fieldset>  
-            <fieldset class="aside__div">
-                <h4 >filtros</h4>
-                <label for="brigthness__slider"> brillo</label>
-                <input class="aside__box" id="brigthness__slider" type="range" min="0" max="1" value="1" step="0.1"></label>
-                <label for="opacity__slider">opacidad
-                <input class="aside__box" id="opacity__slider" type="range" min="0" max="1" value="1" step="0.1"></label>
-                <label for="contrast__slider">contraste
-                <input class="aside__box" id="contrast__slider" type="range" min="100" max="1000" step="1%" value="100" ></label>
-                <label for="blur__slider">desenfoque
-                <input class="aside__box"id="blur__slider" type="range" min="0" max="10" step="0.1" value="0" ></label>
-                <label for="grayscale__slider">escala de grises
-                <input class="aside__box" id="grayscale__slider" type="range" min="0" max="100" step="1" value="0" ></label>
-                <label for="sepia__slider">sepia
-                <input class="aside__box" id="sepia__slider" type="range" min="0" max="100" step="1" value="0" ></label>
-                <label for="hue__slider">hue
-                <input class="aside__box" id="hue__slider" type="range"min="0" max="359" step= "1" value="0"></label>
-                <label for="saturate__slider">saturado
-                <input class="aside__box" id="saturate__slider" type="range" min="100" max="1000" step="10" value="0"></label>
-                <label for="invert__slider">negativo
-                <input class="aside__box" id="invert__slider" type="range" min="0" max="1" step="0.1" value="0"></label>
-                <button class="aside__button" id="reset__button">reestablecer filtros</button>
-            </fieldset>
-        </form>  
+                <fieldset class="aside__div">
+                    <h4 class="aside__h4">url</h4>
+                    <input class="aside__box" id="url" type="url" name="imagePlace">
+                </fieldset>  
+                <fieldset class="aside__div ">
+                    <h4 class="aside__h4">fondo</h4>
+                    <article class="aside__div--article">
+                        <input class="aside__input--color aside__box" type="color" id="color" value="#FFFFFF">
+                        <select class="aside__box aside__select" name="fondo" id="selectBlend">
+                            <option value="unset" name="blends">ninguno</option>
+                            <option id="lighten" value="lighten" name="blends">aclarar</option>
+                            <option id="darken" value="darken" name="blends">oscurecer</option>
+                            <option id="difference" value="difference" name="blends">diferencia</option>
+                            <option id="luminosity" value="luminosity" name="blends">luminosidad</option>
+                            <option id="multiply" value="multiply" name="blends">multiplicar</option>
+                        </select>
+                        <button type="menu"></button>
+                    </article>
+                </fieldset>  
+                <fieldset class="aside__div">
+                    <h4 >filtros</h4>
+                    <label for="brigthness__slider"> brillo</label>
+                        <input class="aside__box" id="brigthness__slider" type="range" min="0" max="1" value="1" step="0.1">
+                    </label>
+                    <label for="opacity__slider">opacidad
+                        <input class="aside__box" id="opacity__slider" type="range" min="0" max="1" value="1" step="0.1">
+                    </label>
+                    <label for="contrast__slider">contraste
+                        <input class="aside__box" id="contrast__slider" type="range" min="100" max="1000" step="1%" value="100">
+                    </label>
+                    <label for="blur__slider">desenfoque
+                        <input class="aside__box"id="blur__slider" type="range" min="0" max="10" step="0.1" value="0" >
+                    </label>
+                    <label for="grayscale__slider">escala de grises
+                        <input class="aside__box" id="grayscale__slider" type="range" min="0" max="100" step="1" value="0">
+                    </label>
+                    <label for="sepia__slider">sepia
+                        <input class="aside__box" id="sepia__slider" type="range" min="0" max="100" step="1" value="0" >
+                    </label>
+                    <label for="hue__slider">hue
+                        <input class="aside__box" id="hue__slider" type="range"min="0" max="359" step= "1" value="0">
+                    </label>
+                    <label for="saturate__slider">saturado
+                        <input class="aside__box" id="saturate__slider" type="range" min="100" max="1000" step="10" value="0">
+                    </label>
+                    <label for="invert__slider">negativo
+                        <input class="aside__box" id="invert__slider" type="range" min="0" max="1" step="0.1" value="0">
+                    </label>
+                    <button class="aside__button" id="reset__button">reestablecer filtros</button>
+                </fieldset>
+            </form>  
         </section>
-    
-     <section class="aside__section d none aside__text d-none">
+        <section class="aside__section aside__text d-none">
             <button class="aside__button--x  x__text"><i class="fa-solid fa-xmark"></i></button>
             <h3 class="aside__h3">texto</h3>
             <form action="">
-              <fieldset class="aside__div">
-                <h4 class="aside__h4">superior</h4>
-                    <textarea class="aside__box" name="topText" id="topText" cols="30" rows="2">top text</textarea>
-                    <input type="checkbox" id="outTextTop" name="outTextTop" value="1"> <span class= "aside__radio"> &nbsp;sin texto superior</span> 
-                
-                <h4 class="aside__h4">inferior</h4>
-                    <textarea class="aside__box" name="" id="bottomText" cols="30" rows="2">&nbsp; bottom text</textarea>
-                    <input type="checkbox" id="outTextBottom"
-                    name="outTextBottom" value="1"> <span class= "aside__radio">sin texto inferior</span> 
+                <fieldset class="aside__div">
+                    <h4 class="aside__h4">superior</h4>
+                        <textarea class="aside__box" name="topText" id="topText" cols="30" rows="2">top text</textarea>
+                        <input type="checkbox" id="outTextTop" name="outTextTop" value="1"> 
+                            <span class= "aside__radio"> &nbsp;sin texto superior</span> 
+                    <h4 class="aside__h4">inferior</h4>
+                        <textarea class="aside__box" name="" id="bottomText" cols="30" rows="2">&nbsp; bottom text</textarea>
+                            <input type="checkbox" id="outTextBottom" name="outTextBottom" value="1">
+                                <span class= "aside__radio">sin texto inferior</span> 
                 </fieldset>  
                 <fieldset class="aside__div">
-                <h4 class="aside__h4">fuente</h4>
-                <select class="aside__box" name="fonts" id="fonts">
-                    <option value="Arial">arial</option>
-                    <option value="Arial Narrow Bold">arial black</option>
-                    <option value="American Typewriter">American Typerwriter</option>
-                    <option value="Andale Mono">Andale Mono</option>
-                    <option value="Comic Sans MS">Comic Sanz MS</option>
-                    <option value="Helvetica">Helvetica</option>
-                    <option value="Impact">Impact</option>
-                    <option value="Verdana">Verdana</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                </select>
-                    <div class="aside__div--button">
-                        <input class="aside__box aside__select" type="number" id="fontPx"value="40">
-                        <button id="alignLeft__btn" class="aside__button"><i class="fa-solid fa-align-left"></i></button>
-                        <button id="alignCenter__btn" class="aside__button"><i class="fa-solid fa-align-center"></i></button>
-                        <button id="alignRight__btn" class="aside__button"><i class="fa-sharp fa-solid fa-align-right"></i></button>
-                    </div>
+                    <h4 class="aside__h4">fuente</h4>
+                    <select class="aside__box" name="fonts" id="fonts">
+                        <option value="Arial">arial</option>
+                        <option value="Arial Narrow Bold">arial black</option>
+                        <option value="American Typewriter">American Typerwriter</option>
+                        <option value="Andale Mono">Andale Mono</option>
+                        <option value="Comic Sans MS">Comic Sanz MS</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                    </select>
+                </fieldset>
+                <fieldset class="aside__div--button">
+                    <input class="aside__box aside__select" type="number" id="fontPx"value="40">
+                    <button id="alignLeft__btn" class="aside__button">
+                        <i class="fa-solid fa-align-left"></i>
+                    </button>
+                    <button id="alignCenter__btn" class="aside__button">
+                        <i class="fa-solid fa-align-center"></i>
+                    </button>
+                    <button id="alignRight__btn" class="aside__button">
+                        <i class="fa-sharp fa-solid fa-align-right"></i>
+                    </button>
                 </fieldset>  
                 <fieldset class="aside__div--article">
-                <article>
-                    <h4 class="aside__h4">color</h4>
-                    <input id="letterFontColor" class="aside__box" type="color" value="#000000"  >
-                </article>
-                <article>
-                    <h4 class="aside__h4">fondo</h4>
-                    <input id="backFontColor" class="aside__box" type="color" value="#FFFFFF">
-                </article>      
-                <label class="aside__radio"><input id="transparentButton" type="checkbox" name="transparentButton" value="2"> &nbsp; fondo transparente</label>
-            </fieldset>  
-                <fieldset class="aside__div">
-                <h4 class="aside__h4">contorno</h4>
-                <button id="strokeNone" class="aside__button" >ninguno</button>
-                <button id="strokeLigth" class="aside__button">claro</button>
-                <button id="strokeDark" class="aside__button">oscuro</button>
+                    <article>
+                        <h4 class="aside__h4">color</h4>
+                        <input id="letterFontColor" class="aside__box" type="color" value="#000000">
+                    </article>
+                    <article>
+                        <h4 class="aside__h4">fondo</h4>
+                        <input id="backFontColor" class="aside__box" type="color" value="#FFFFFF">
+                    </article>      
+                        <label class="aside__radio">
+                            <input id="transparentButton" type="checkbox" name="transparentButton" value="2"> &nbsp; fondo transparente
+                        </label>
                 </fieldset>  
                 <fieldset class="aside__div">
-                <h4 class="aside__h4">espaciado</h4>
-                <input id="paddingLetters" class="aside__box aside__select" type="number" min="10" max="50" value="35">
+                    <h4 class="aside__h4">contorno</h4>
+                    <button id="strokeNone" class="aside__button" >ninguno</button>
+                    <button id="strokeLigth" class="aside__button">claro</button>
+                    <button id="strokeDark" class="aside__button">oscuro</button>
                 </fieldset>  
                 <fieldset class="aside__div">
-                <h4 class="aside__h4">interlineado</h4>
-                <select class="aside__box" name="interlineado" id="selectLineHeigth">
-                    <option value="0.8">0.8</option>
-                    <option value="1">1</option>
-                    <option value="1.2">1.2</option>
-                    <option value="1.5">1.5</option>
-                    <option value="2">2</option>
-                    <option value="2.5">2.5</option>
-                </select>
+                    <h4 class="aside__h4">espaciado</h4>
+                    <input id="paddingLetters" class="aside__box aside__select" type="number" min="10" max="50" value="35">
                 </fieldset>  
+                <fieldset class="aside__div">
+                    <h4 class="aside__h4">interlineado</h4>
+                    <select class="aside__box" name="interlineado" id="selectLineHeigth">
+                        <option value="0.8">0.8</option>
+                        <option value="1">1</option>
+                        <option value="1.2">1.2</option>
+                        <option value="1.5">1.5</option>
+                        <option value="2">2</option>
+                        <option value="2.5">2.5</option>
+                    </select>
+                </fieldset>
+            </form>  
         </section> 
-    </form>
     </aside>
     <script src="js/main.js"></script>
 </body>
