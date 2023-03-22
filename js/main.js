@@ -55,7 +55,7 @@ const downloadMeme = () => {
       saveAs(blob, 'mi-meme.png')
     })
 }
-//This functio is used to hide aside in media queris 
+//This function is used to hide aside in media queris 
 var mql = window.matchMedia('(max-width: 1280px)');
 
 function screenTest(e) {
@@ -74,10 +74,7 @@ $("#download-meme").addEventListener('click', downloadMeme)
 //Function used to insert Url Image in the box
 $("#url").addEventListener("input", () => {
        const urlImage = $("#url").value
-       $(".main__div--center").style.width = "610px"
-       $(".main__div--center").style.height = "350px"
-       $(".main__div--center").style.backgroundSize = "100% 100%"
-      $(".main__div--center").style.backgroundImage = `url(${urlImage})`
+      $(".main__div--center").style.backgroundImage = `url(${urlImage})`  
    })
   
   //Function to change the background color of the image
@@ -207,12 +204,28 @@ $("#backFontColor").addEventListener("input",()=>{
 $(" #transparentButton").addEventListener("click", ()=>{
   if ($("#transparentButton").checked){
   $(".main__blackTop").style.backgroundColor= "transparent"
+  $(".main__blackTop").style.position="absolute"
   $(".main__blackBottom").style.backgroundColor= "transparent"
-}else{
-    $(".main__blackBottom").style.backgroundColor=  $("#backFontColor").value
-    $(".main__blackTop").style.backgroundColor= $("#backFontColor").value }
-})
-
+  $(".main__blackBottom").style.position="absolute"   
+} else
+  { $(".main__blackBottom").style.backgroundColor=  $("#backFontColor").value
+    $(".main__blackTop").style.position="absolute"
+    $(".main__blackTop").style.backgroundColor= $("#backFontColor").value
+    $(".main__blackBottom").style.position="absolute"
+    $("#mi-meme").style.height="450px"
+    $(".main__div--center").style.marginTop="100px"
+  }
+  })
+  $(" #transparentButton").addEventListener("click", ()=>{
+    if ($("#transparentButton").checked){
+    $(".main__blackTop").style.backgroundColor= "transparent"
+    $(".main__blackTop").style.position="absolute"
+    $(".main__blackBottom").style.backgroundColor= "transparent"
+    $(".main__blackBottom").style.position="absolute"
+    $("#mi-meme").style.height="550px"   
+    $(".main__div--center").style.marginTop="0px"
+  }})
+//Note for the profesor: I don't like the way a solve this function, but I really don't have any other idea too make it works.
 //Function to change the stroke style of the letters
 $("#strokeNone").addEventListener("click",(e)=>{
   e.preventDefault()
@@ -233,7 +246,9 @@ $("#strokeDark").addEventListener("click",(e)=>{
 //Function to grow and decrease the space to write  
 $("#paddingLetters").addEventListener("input", ()=>{
   const paddingDiv= $("#paddingLetters").value
+  $(".main__blackTop").style.height= "auto"
   $(".main__blackTop").style.padding = `${paddingDiv}px` 
+  $(".main__blackBottom").style.height= "auto"
   $(".main__blackBottom").style.padding =`${paddingDiv}px` 
 })
 
@@ -247,3 +262,30 @@ $("#selectLineHeigth").addEventListener("click",()=>{
   const interlineado= $("#selectLineHeigth").value
   $(".main__bottom").style.lineHeight= `${interlineado}`
 })
+
+//Funtion to put the background of the text in transparent mode
+
+$(" #transparentButton").addEventListener("click", ()=>{
+  if ($("#transparentButton").checked){
+  $(".main__blackTop").style.backgroundColor= "transparent"
+  $(".main__blackTop").style.position="absolute"
+  $(".main__blackBottom").style.backgroundColor= "transparent"
+  $(".main__blackBottom").style.position="absolute"   
+} else
+  { $(".main__blackBottom").style.backgroundColor=  $("#backFontColor").value
+    $(".main__blackTop").style.position="absolute"
+    $(".main__blackTop").style.backgroundColor= $("#backFontColor").value
+    $(".main__blackBottom").style.position="absolute"
+    $("#mi-meme").style.height="450px"
+    $(".main__div--center").style.marginTop="100px"
+  }
+  })
+  $(" #transparentButton").addEventListener("click", ()=>{
+    if ($("#transparentButton").checked){
+    $(".main__blackTop").style.backgroundColor= "transparent"
+    $(".main__blackTop").style.position="absolute"
+    $(".main__blackBottom").style.backgroundColor= "transparent"
+    $(".main__blackBottom").style.position="absolute"
+    $("#mi-meme").style.height="550px"   
+    $(".main__div--center").style.marginTop="0px"
+  }})

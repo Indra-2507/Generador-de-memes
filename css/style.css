@@ -8,15 +8,12 @@
 --font-family-type:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif }
 
 [data-theme="ligth-mode"]{
-    
     --text-color: #424242;
     --button-aside-color: #e0e0e0;
     --button-hover: #bdbdbd;
     --background-color: #eeeeee;
     --color-header: #e0e0e0;
     --aside-color: #fafafa;
-    --color-title-panel: rgb(33 33 33 / 80%);
-    --color-title-control: rgb(33 33 33 / 70%);
 }
 
 *{margin: 0%;
@@ -57,7 +54,6 @@ header{background-color: var(--color-header);
     background-color: transparent;
     text-transform: capitalize;
     color: var(--text-color);
-    
 }
 
 
@@ -65,37 +61,43 @@ header{background-color: var(--color-header);
 
 .main__section{
     background-color:var(--background-color);
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     height: 650px;
 }
 #mi-meme{
+    width: 610px;
     height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .main__div--black{
     background-color: var(--text-color);
     height: 100px;
     width: 610px;
-    
-}
-.main__h2{
     color: var(--aside-color);
     text-align: center;
     font-size: 2rem ;
     padding: 35px 50px;
-    text-transform: uppercase;
-    ;
-}
+    position: static;
 
+    }
+.main__bottom{
+    bottom: 0;
+}
+.main__h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .main__div--center{
     background-color: var(--black-color);
-    height: 350px;
-    width: 610px;
-    
+    background-size: 100% 100%;
+    flex-grow: 1;
 }
+
 .main__button{
     background-color: #008000;
     padding: 1%;
@@ -107,10 +109,6 @@ header{background-color: var(--color-header);
     background-color: #4cb34c;
 }
 
-.main__blackTop.transparent-mode,
-.main__blackBottom.transparent-mode{
-    background-color: transparent;
-}
 /*aside*/
 /*general*/
 aside{background-color:var(--aside-color); 
