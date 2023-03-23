@@ -227,14 +227,13 @@ $(" #transparentButton").addEventListener("click", ()=>{
   $(".main__blackTop").style.backgroundColor= "transparent"
   $(".main__blackTop").style.position="absolute"
   $(".main__blackBottom").style.backgroundColor= "transparent"
-  $(".main__blackBottom").style.position="absolute"   
+  $(".main__blackBottom").style.position="absolute"  
+  $(".main__blackBottom").style.bottom="200px" 
 }else
   { $(".main__blackBottom").style.backgroundColor=  $("#backFontColor").value
     $(".main__blackTop").style.position="absolute"
     $(".main__blackTop").style.backgroundColor= $("#backFontColor").value
-    $(".main__blackBottom").style.position="absolute"
-    $("#div__mi--meme").style.height="450px"
-    $(".main__div--center").style.marginTop="100px"
+    $(".main__blackBottom").style.position="static"
 }
   })
 
@@ -243,11 +242,9 @@ $(" #transparentButton").addEventListener("click", ()=>{
     $(".main__blackTop").style.backgroundColor= "transparent"
     $(".main__blackTop").style.position="absolute"
     $(".main__blackBottom").style.backgroundColor= "transparent"
-    $(".main__blackBottom").style.position="absolute"
-    $("#div__mi--meme").style.height="550px"   
-    $(".main__div--center").style.marginTop="0px"
+    $(".main__blackBottom").style.position="absolute" 
   }})
-//Note for the profesor: I don't like the way a solve this function, but I really don't have any other idea too make it works.
+  
 
 //Function to change the stroke style of the letters
 
@@ -265,7 +262,7 @@ $("#strokeLigth").addEventListener("click",(e)=>{
 
 $("#strokeDark").addEventListener("click",(e)=>{
   e.preventDefault()
-  $(".main__balckTop").style.webkitTextStroke = "1.5px black"
+  $(".main__blackTop").style.webkitTextStroke = "1.5px black"
   $(".main__blackBottom").style.webkitTextStroke ="2px black"
 })
 
@@ -293,7 +290,7 @@ $("#selectLineHeigth").addEventListener("click",()=>{
 
 //Funtion to put the background of the text in transparent mode
 
-$(" #transparentButton").addEventListener("click", ()=>{
+/*$(" #transparentButton").addEventListener("click", ()=>{
   if ($("#transparentButton").checked){
   $(".main__blackTop").style.backgroundColor= "transparent"
   $(".main__blackTop").style.position="absolute"
@@ -308,7 +305,6 @@ $(" #transparentButton").addEventListener("click", ()=>{
     $(".main__div--center").style.marginTop="100px"
 }
   })
-
 $(" #transparentButton").addEventListener("click", ()=>{
     if ($("#transparentButton").checked){
     $(".main__blackTop").style.backgroundColor= "transparent"
@@ -318,3 +314,4 @@ $(" #transparentButton").addEventListener("click", ()=>{
     $("#div__mi--meme").style.height="550px"   
     $(".main__div--center").style.marginTop="0px"
   }})
+*/

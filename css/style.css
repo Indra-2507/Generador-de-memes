@@ -252,50 +252,51 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 /*tablets*/
 @media(max-width: 681px){
-    #mi-meme{
+    #div__mi--meme{
         display: flex;
         justify-content: center;
         align-items: center;
     }
-    .main__div--black{
+    .main__tittle{
         width: 460px;
-        transition: all 0.3s linear 0s;
+        transition: all 0.1s linear 0s;
     }
     .main__div--center{
         width: 460px;
-        transition: all 0.3s linear 0s;
+        transition: all 0.1s linear 0s;
     }
     aside{
-        width: 100%;
+        width: 100vw;
     }
 }
 
 /*smalls smarthphones*/
 @media (max-width: 480px){
-    .main__div--black {
+    .main__tittle {
         width: 300px;
-        height: auto;transition: all 0.3s linear 0s;}
+        height: auto;
+        transition: all 0.1s linear 0s;
+    }
     .main__div--center{
         width: 300px;
         height: 250px;
-        transition: all 0.3s linear 0s;}
+        transition: all 0.1s linear 0s;}
     .main__button{
         top:700px}
 }
 
 @media (max-width: 320px){
-    .main__div--black{
+    .main__tittle{
         width:180px;
         height: 50px;
-        transition: all 0.3s linear 0s;
-
-    } .main__div--center{
+        transition: all 0.1s linear 0s;
+        font-size: 1rem;
+} 
+    .main__div--center{
         width: 180px;
         height: 200px;
-        transition: all 0.3s linear 0s;
+        transition: all 0.1s linear 0s;
     }
-    .main__h2{
-        font-size: 1rem;}
     .main__button{
         top:700px
 }
