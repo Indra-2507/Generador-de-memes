@@ -84,10 +84,10 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--text-color);
+    background-color: #ffffff;
     height: 100px;
     width: 610px;
-    color: var(--aside-color);
+    color: var(--black-color);
     text-align: center;
     font-size: 2rem ;
     padding: 35px 50px;
@@ -266,7 +266,10 @@ input[type=range]:focus::-webkit-slider-runnable-track {
         transition: all 0.1s linear 0s;
     }
     aside{
-        width: 100vw;
+        width: 100%;
+    }
+    .main__blackTop{
+        top:120px
     }
 }
 
@@ -283,6 +286,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
         transition: all 0.1s linear 0s;}
     .main__button{
         top:700px}
+    .main__tittle{
+        font-size: 1rem;
+        }
 }
 
 @media (max-width: 320px){
@@ -299,6 +305,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
     }
     .main__button{
         top:700px
-}
+    }
+    .main__tittle{
+        font-size: 0.7rem;
+        }
 }
 
