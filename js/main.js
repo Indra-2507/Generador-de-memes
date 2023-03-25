@@ -229,7 +229,7 @@ $(" #transparentButton").addEventListener("click", ()=>{
   $(".main__blackTop").style.position="absolute"
   $(".main__blackBottom").style.backgroundColor= "transparent"
   $(".main__blackBottom").style.position="absolute"  
-  $(".main__blackBottom").style.bottom="100px"
+ $(".main__blackBottom").style.bottom="100px"
 }else
   { $(".main__blackBottom").style.backgroundColor=  $("#backFontColor").value
     $(".main__blackTop").style.position="absolute"
